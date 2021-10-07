@@ -1,0 +1,38 @@
+Importaciones Relativas Vs Absolutas
+====================================
+
+> usando importación relativa
+import Button from "../../../../components/atoms/Button"
+
+> usando importación absoluta
+import Button from "components/atoms/Button"
+
+---
+
+-> Creamos un archivo jsconfig.json o tsconfig.json (si usamos typescript)
+
+1. copiamos el siguiente codigo:
+---
+{
+  "compilerOptions": {
+    "baseUrl": "src" 
+  }
+}
+---
+Ej>import Button from "components/atoms/Button"
+
+
+
+
+2. podemos crear paths personalizados.
+---
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+       "@/components/*": ["components/*"],
+    }
+  }
+}
+---
+Ej> import Button from "@/components/atoms/Button"

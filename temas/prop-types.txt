@@ -1,0 +1,31 @@
+PropTypes
+=========
+
+> Agregamos validaciones de tipado a nuestros componentes de React
+
+- Por medio de la libreria propTypes podemos agregar una validacion de tipado a nuestros componentes de React
+sin la necesidad de usar TypeScript. De esta forma podemos tener un codigo mucho mas robusto, escalable y profesional.
+
+Paquete: 
+
+npm i prop-types
+
+Ejemplo de uso en un componente:
+
+---
+import PropTypes from 'prop-types'
+
+const Component = ({class, onAdd, text}) => (
+  <Button className={class} onClick={onAdd}>{text}</Button>
+)
+
+Component.propTypes = {
+  class: PropTypes.string.isRequire,
+  onAdd: PropTypes.func,
+  text: PropTypes.string.isRequire,
+}
+
+export default Component
+---
+
+

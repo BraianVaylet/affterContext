@@ -1,0 +1,101 @@
+Arquitectura de componentes:
+============================
+
+Estos son algunos ejemplos de cómo pueden organizar sus componentes, 
+pueden usar alguna o pueden separarlos de otra manera que les sea más representativa para su proyecto.
+Estos fueron ejemplos con los que me fui encontrando en los diferentes proyectos en los que trabajé. 
+
+
+# OPC 1️⃣: "simple"
+. Guardamos nuestros componentes página en la carpeta pages 
+. Guardamos nuestros componentes tanto stateful como stateless en components
+
+> React project
+  - components
+      - Componente1
+      - Componente2
+  - pages
+      - ComponentePage1
+      - ComponentePage2
+
+
+
+# OPC 2️⃣: "simples & contenedores"
+. Guardamos nuestros componentes página en la carpeta pages 
+. Guardamos nuestros componentes (que no contengan otros componentes) tanto stateful como stateless en components
+. Guardamos nuestros componentes (contengan a otros componentes) tanto stateful como stateless en containers
+
+> React project
+  - components
+      - Componente1
+      - Componente2
+  - containers
+      - ComponenteContenedor1
+      - ComponenteContenedor2
+  - pages
+      - ComponentePage1
+      - ComponentePage2
+
+
+
+# OPC 3️⃣: “stateless & statefull”
+. Guardamos nuestros componentes página en la carpeta pages 
+. Guardamos nuestros componentes stateless en components
+. Guardamos nuestros componentes stateful en containers
+
+> React project
+  - components
+      - ComponenteStateless1
+      - ComponenteStateless2
+  - containers
+      - ComponenteStateful1
+      - ComponenteStateful2
+  - pages
+      - ComponentePage1
+      - ComponentePage2
+
+
+
+# OPC 4️⃣:  "sin state & con state"
+. Guardamos nuestros componentes página en la carpeta pages 
+. Guardamos nuestros componentes que NO accedan directamente al state de context o redux en components
+. Guardamos nuestros componentes que accedan directamente al state de context o redux en containers
+
+> React project
+  - components
+      - ComponenteSinEstadoGlobal1
+      - ComponenteSinEstadoGlobal2
+  - containers
+      - ComponenteConEstadoGlobal1
+      - ComponenteConEstadoGlobal2
+  - pages
+      - ComponentePage1
+      - ComponentePage2
+
+
+
+# OPC 4️⃣: "atomic design"
+. Guardamos nuestros componentes página en la carpeta pages 
+. Aplicamos el patron AtomicDesign: https://bradfrost.com/blog/post/atomic-web-design/
+. Los componentes Atomos son los más simples y minimalistas, tienen una función específica.
+. Los componentes Moleculares son la combinación de más de un átomo.
+. Los componentes Organismos son mucho más complejos y son la suma de átomos y moléculas.
+. Los componentes Template son la suma de todos los anteriores: organismos, moléculas y átomos. Suelen ser los más complejos y grandes.
+
+> React project
+  - components
+      - atoms
+          - ComponenteAtomo1
+          - ComponenteAtomo2
+      - molecules
+          - ComponenteMolecula1
+          - ComponenteMolecula2
+      - organisms
+          - ComponenteOrganismo1
+          - ComponenteOrganismo2
+      - templates
+          - ComponenteTemplate1
+          - ComponenteTemplate2
+  - pages
+      - ComponentePage1
+      - ComponentePage2

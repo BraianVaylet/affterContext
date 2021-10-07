@@ -1,0 +1,11 @@
+.main {
+  background-color: bisque;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.main a {
+  margin-right: 20px;
+}

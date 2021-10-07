@@ -1,0 +1,48 @@
+Formas de crear nuestros componentes:
+=====================================
+
+Estos son algunos ejemplos de cómo pueden organizar cada uno de sus componentes, 
+pueden usar la que prefieran dependiendo de lo que necesiten para su proyecto.
+Estos fueron ejemplos con los que me fui encontrando en los diferentes proyectos en los que trabajé. 
+
+
+# OPC 1️⃣: "archivo"
+. Creamos un archivo con el nombre del componente y con extensión .js, .jsx o .ts, .tsx si están con TypeScript.
+
+> React project
+  - components
+      - Componente1.js
+      - Componente2.js
+
+
+
+# OPC 2️⃣: "fichero"
+. Contexto: Cuando trabajamos con React en proyectos medianos a grandes, nuestros componentes están atados a diferentes funcionalidades, que normalmente se encuentran en otros archivos.
+. Creamos un fichero con el nombre del componente
+. Dentro del fichero creamos un archivo con el nombre del componente con extensión .jsx o .tsx, para identificar a simple vista que este archivo utiliza jsx.
+. Dentro del fichero guardamos todos los archivos extra que aplican a ese componente en específico.
+. Dentro del fichero creamos un archivo index.js o .ts en el cual exportamos el componente que creamos.
+
+> React project 
+  - components
+      - Componente1 (un ejemplo con typescript)
+          - index.ts (archivo principal)
+          - Componente1.tsx (archivo con jsx)
+          - Componente1.module.css (archivo de estilos)
+          - Componente1.spec.tsx (archivo con test unitarios)
+          - Componente1.story.tsx (archivo con historia del componente para storybook)
+          - Componente1.types.ts (archivo con las interfaces y types por usar typescript)
+          - Componente1.mock.ts (archivo con posible mock para probar el componente)
+          - Componente1.skeleton.tsx (archivo skeleton para mostrar durante la carga)
+      - Componente2 (un ejemplo con javascript)
+          - index.js
+          - Componente2.jsx
+          - Componente2.module.css
+          - Componente2.spec.jsx
+          - Componente2.story.jsx         
+          - Componente2.mock.js
+          - Componente2.skeleton.jsx
+
+Nota: Como pueden ver en el ejemplo podemos tener más de un archivo asociado a un componente de React, esto va a depender de la escala del proyecto,
+por lo tanto es una buena práctica guardar sus componentes en ficheros para poder tener toda la lógica en un solo lugar y no repartida en diferentes ficheros 
+del proyecto.

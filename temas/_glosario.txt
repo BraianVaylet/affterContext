@@ -1,0 +1,18 @@
+Temas que vamos a ver:
+======================
+
+> Buenas practicas con React
+
+- Trabajando con repos
+- Trabajando con imagenes en mi proyecto
+- Estructura de un componente
+- Arquitectura de componentes
+- usemos wrappers
+- importaciones relativas vs absolutas
+...
+- PropTypes o TypeScript
+- SEO en react? usamos react-helmet https://www.npmjs.com/package/react-helmet
+
+
+> Context
+
