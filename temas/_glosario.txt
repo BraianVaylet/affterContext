@@ -3,15 +3,18 @@ Temas que vamos a ver:
 
 > Buenas practicas con React
 
-- Trabajando con repos
+- Trabajando con repos (presentacion, ramas, commits)
 - Trabajando con imagenes en mi proyecto
 - Estructura de un componente
 - Arquitectura de componentes
-- usemos wrappers
+- usemos componentes wrappers
 - importaciones relativas vs absolutas
+- crear y usar mocks durante el desarrollo
+- Probemos nuestro proyecto deployado en algun lago (vercel, github-pages, etc)
 ...
-- PropTypes o TypeScript
-- SEO en react? usamos react-helmet https://www.npmjs.com/package/react-helmet
+- PropTypes o TypeScript ❓
+- SEO en react? 👉 usamos react-helmet https://www.npmjs.com/package/react-helmet
+- y luego que?  👉 TypeScript, Redux, NextJs, Jest, Husky...
 
 
 > Context

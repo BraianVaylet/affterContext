@@ -1,9 +1,12 @@
 import React from 'react'
+import styles from './MiniProduct.module.css'
 
-const MiniProduct = ({count, item}) => {
+const MiniProduct = ({item, count}) => {
+  const {title, price, color} = item
+
   return (
-    <div>
-      {/* <p>{count}x | {item.title} (${item.price})</p>       */}
+    <div className={styles.main} style={{backgroundColor: color}}>
+      <p>{title} | {count}u. x ${price}</p>      
     </div>
   )
 }

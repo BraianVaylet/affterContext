@@ -3,10 +3,14 @@ import React, { useState, createContext, useEffect } from "react"
 export const CartContext = createContext({})
 
 export const CartContextProvider = ({ children }) => {
+  // cartItems son los items formateados dentro de mi carrito.
   const [cartItems, setCartItems] = useState([])
+  // total es el total de items de mi carrito.
   const [total, setTotal] = useState(0)
+  // price es el precio total de todos los productos de mi carrito.
   const [price, setPrice] = useState(0)
       
+  // hook para calcular los totales cada vez que cartItems cambia.
   useEffect(() => {
     setTotal(handleTotal())
     setPrice(handleTotalPrice())
@@ -14,22 +18,23 @@ export const CartContextProvider = ({ children }) => {
 
   // * Agrego un item al carrito.
   const addItem = (item, count) => {
-    // 1. Guardo mi producto en un objeto
+    // 1. Guardo mi producto en un objeto.
     let cartElement = {item, count}
-    // 2. Creo un carrito auxiliar 
+    console.log(`cartElement`, cartElement)
+    // 2. Creo un carrito auxiliar.
     let cartAux = []
-    // Consulto si el producto esta en el carrito.
+    // 3. Consulto si el producto esta en el carrito.
     if (isInCart(item)) {
       console.log(`Esta en el 🛒`)
-      // 1. Busco el producto por el id.
+      // 3.a. Busco el producto por el id.
       cartElement = cartItems.find(element => element.item.id === item.id)
-      // 2. Actualizo el contador del item filtrado.
+      // 3.b. Actualizo el contador del item filtrado.
       cartElement.count = cartElement.count + count
-      // 3. retorno el carrito tal como estaba.
+      // 3.c. retorno el carrito tal como estaba.
       cartAux = [...cartItems]
     } else {
       console.log(`NO esta en el 🛒`)
-      // 1. Agrego el item al carrito
+      // 3.a. Agrego el item al carrito
       cartAux = [cartElement, ...cartItems]
     }
     setCartItems(cartAux)
@@ -56,6 +61,8 @@ export const CartContextProvider = ({ children }) => {
     // BUSCO si encuentro al menos 1 elemento que cumpla con la condicion.
     return cartItems && cartItems.some(element => element.item.id === item.id)
   }
+
+  // !!! Bonus Section 🎉🎉🎉
 
   // * BONUS: Quito solo 1 elemento del carrito
   const removeOneItem = item => {
@@ -87,13 +94,15 @@ export const CartContextProvider = ({ children }) => {
     // 1. Creo una copia del carrito donde trabajar
     let newCartItems = cartItems
     // 2. Mapeo mi array y lo actualizo
-    return newCartItems.map(element => {
+    const test = newCartItems.map(element => {
       // 3. Retorno un objeto con el elemento + el total de ese producto
       return {
         ...element,
         price: element.item.price * element.count
       }
     })    
+    console.log(`test`, test)
+    return test
   }
 
   // * BONUS: Obtengo el total de elementos del carrito
@@ -135,12 +144,13 @@ export const CartContextProvider = ({ children }) => {
       value={{
         addItem,
         removeItem,
-        removeOneItem,
         clear,
         isInCart,
+        removeOneItem,
         cartItems,
         total,
         price,
+        handleTotalPriceByItem
       }}
     >
       {children}
